@@ -1,0 +1,15 @@
+# Környezeti változók (API kulcs védelem)
+.env
+
+# Virtuális környezet
+venv/
+.venv/
+
+# Helyi adatbázis és ideiglenes fájlok
+chroma_db/
+temp_*
+
+# Python cache fájlok
+__pycache__/
+*.pyc
+.pytest_cache/
