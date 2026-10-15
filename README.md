@@ -28,6 +28,7 @@ GenAI-RAG-Assistant/
 ├── rag_prototype.py          # CLI prototype script for local testing
 ├── requirements.txt          # Python dependencies
 └── .env.example              # Environment variables template
+```
 
 Key Features
 FastAPI Endpoints:
