@@ -36,6 +36,7 @@ GenAI-RAG-Assistant/
 ├── requirements.txt          # Python dependencies
 ├── pytest.ini                # Pytest configuration
 └── .env.example              # Environment variables template
+```
 
 
 Key Features
@@ -204,5 +205,3 @@ Patrik Madár
 GitHub: @zenpeter-123
 
 Email: madarpatrik369@gmail.com
-
-text```
