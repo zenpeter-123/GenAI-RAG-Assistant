@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  rag-assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: genai-rag-assistant
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./Markov chains.pdf:/app/Markov chains.pdf
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
