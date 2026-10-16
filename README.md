@@ -13,7 +13,7 @@ The system combines vector embeddings and large language models to answer user q
 
 ## Project Structure
 
-text```
+```
 GenAI-RAG-Assistant/
 ├── app/
 │   ├── api/
@@ -36,7 +36,7 @@ GenAI-RAG-Assistant/
 ├── requirements.txt          # Python dependencies
 ├── pytest.ini                # Pytest configuration
 └── .env.example              # Environment variables template
-text```
+```
 
 ## Key Features
 
