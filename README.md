@@ -1,6 +1,6 @@
 # GenAI RAG Assistant
 
-Enterprise-ready Retrieval-Augmented Generation (RAG) backend built with FastAPI, LangChain, ChromaDB, and OpenAI. Designed for modularity, clean code, and precise document-based question answering with source citations.
+A modular Retrieval-Augmented Generation (RAG) backend built with FastAPI, LangChain, ChromaDB, and OpenAI. Designed for modularity, clean code, and precise document-based question answering with source citations.
 
 ## Architecture & Theoretical Background
 
@@ -62,7 +62,66 @@ GenAI-RAG-Assistant/
 ### Automated Testing
 
 - 10 tests with pytest covering smoke, upload, chat, and end-to-end RAG flow.
-- Automated evaluation script (evaluate.py) validating system accuracy across 15 domain-specific queries.
+- Run the automated evaluation script to test 15 domain-specific queries and verify that the RAG pipeline successfully returns responses through the FastAPI test client:
+```bash
+python evaluate.py
+
+=== RAG SYSTEM AUTOMATED EVALUATION ===
+Dokumentum feltöltése és indexelése: project_documentation.pdf...
+Sikeres feltöltés és indexelés!
+
+
+[Test 1/15] Kérdés: Mi a RAG asszisztens alapvető célja a dokumentum szerint?
+Válasz: A RAG asszisztens alapvető célja, hogy képes legyen a saját tudástárát ötvözve megadott dokumentumokat figyelembe véve választ adni a felhasználónak....
+
+[Test 2/15] Kérdés: Hány dimenziós valós vektorteret (d) használ az OpenAI modellje?
+Válasz: Az OpenAI modellje egyd= 1536 dimenziós valós vektorteret használ....
+
+[Test 3/15] Kérdés: Hova történik a pontok vetítése ebben a vektortér-konstrukcióban?
+Válasz: A pontok vetítése az egységgömb felszínére történik ebben a vektortér-konstrukcióban....
+
+[Test 4/15] Kérdés: Pontosan hogyan van definiálva az u és v vektorok közötti távolságmennyiség d(u,v)?
+Válasz: Az u és v vektorok közötti távolságmennyiség d(u,v) a következőképpen van definiálva: d(u,v) = ⟨u;v⟩ = cos(θ), ahol θ az u és v vektorok közötti, origóból mért szög....
+
+[Test 5/15] Kérdés: Mitől függ a skaláris szorzat értéke ebben a gömbi távolság-modellben?
+Válasz: A skaláris szorzat értéke ebben a gömbi távolság-modellben csak a két vektor bezárt szögétől függ....
+
+[Test 6/15] Kérdés: Mi a pontos célja az embedding modellnek a válaszok és kérdések egységgömbre vetítése mögött?
+Válasz: Az embedding modell célja, hogy a válaszokat és kérdéseket úgy helyezze el egy egydimenziós valós vektortérben, hogy meghatározható legyen egy értelmes távolságmetrika a pontok között, mivel a távolságnak a relevanciát szeretnénk megfeleltetni. Az egységgömb felszínére vetítve a pontokat, a modell b...
+
+[Test 7/15] Kérdés: Melyik tudományos cikk foglalkozik a kontrasztív reprezentációtanulással a hiperszférán?
+Válasz: A kontrasztív reprezentációtanulással a hiperszférán foglalkozó tudományos cikk a következő: Tongzhou Wang és Phillip Isola. Understanding contrastive representation learning through alignment and uniformity on the hypersphere. CoRR, abs/2005.10242, 2020....
+
+[Test 8/15] Kérdés: A kérdés gömbfelszíni vetületéhez viszonyítva hány legközelebb eső válasz vetületét határozzuk meg?
+Válasz: Nem található elegendő információ a dokumentumban....
+
+[Test 9/15] Kérdés: Hogyan osztja le a szerepeket a rendszer a ChromaDB és a nyelvi modell között?
+Válasz: Nem található elegendő információ a dokumentumban....
+
+[Test 10/15] Kérdés: Mi a RAG (Retrieval Augmentation Generation) folyamat pontos lépésről lépésre láncolata?
+Válasz: A RAG (Retrieval Augmentation Generation) folyamat pontos lépésről lépésre láncolata a következő:
+
+1. Embedding model
+2. ChromaDB
+3. LLM...
+
+[Test 11/15] Kérdés: Mely alapvető Python könyvtárakat kell letölteni a virtuális környezetbe az implementáció első lépéseként?
+Válasz: A virtuális környezetbe az implementáció első lépéseként a következő Python könyvtárakat kell letölteni: langchain, langchain-openai, langchain-community, chromadb, pydf, python-dotenv....
+
+[Test 12/15] Kérdés: Milyen konkrét funkciót biztosít a jelenlegi projekt FastAPI endpointos megoldása?
+Válasz: A jelenlegi projekt FastAPI endpointos megoldása tetszőleges PDF-ben való böngészésre ad lehetőséget....
+
+[Test 13/15] Kérdés: Milyen típusú tokeneket/modellt használ az LLM rész az implementáció megvalósításához?
+Válasz: A gpt 4.0 mini tokeneket használ az LLM rész megvalósításához....
+
+[Test 14/15] Kérdés: Hogyan biztosítható, hogy a válaszok ne torzuljanak az egységgömbre vetítés közben?
+Válasz: Nem található elegendő információ a dokumentumban....
+
+[Test 15/15] Kérdés: Ki a szerzője és mi a címe a bibliográfiában szereplő 2020-as hivatkozásnak?
+Válasz: A szerzője Tongzhou Wang és Phillip Isola, a címe "Understanding contrastive representation learning through alignment and uniformity on the hypersphere."...
+
+Evaluáció kész! Sikeresen lekérdezve: 15/15 tesztkérdés.
+```
 
 ## Installation & Setup
 
@@ -217,11 +276,3 @@ Patrik Madár
 
 - GitHub: https://github.com/zenpeter-123
 - Email: madarpatrik369@gmail.com
-
-
-Author
-Patrik Madár
-
-GitHub: @zenpeter-123
-
-Email: madarpatrik369@gmail.com
